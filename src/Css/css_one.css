@@ -1,0 +1,58 @@
+#heading {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 5px 10px 8px #888;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 10px;
+  font-weight: 600;
+
+  -webkit-animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-center 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+#cross {
+  -webkit-animation: scale-up-center 1.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+#circle {
+  -webkit-animation: scale-up-center 0.5s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-center 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.icon_spin {
+  border-radius: 25px;
+  animation-name: spin;
+  animation-duration: 2s;
+  -webkit-animation-name: spin;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
