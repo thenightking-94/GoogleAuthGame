@@ -63,8 +63,8 @@ const Side = () => {
                 </Select>
             </FormControl>
         </div>
-        <Divider style={{ background: 'white', height: '55px' }} />
-        <div style={{ marginLeft: '39%' }}>
+        <Divider style={{ background: 'white', height: '50px' }} />
+        <div style={{ marginLeft: '37%' }}>
             {
                 !pick &&
                 <Typography style={{ fontVariant: 'all-small-caps', boxShadow: '5px 8px 10px #888', background: '#dcdcdc', textAlign: 'center', width: '35%', padding: '5px', borderRadius: '25px', color: 'black', fontFamily: 'Helvetica' }}>Choose</Typography>
@@ -79,10 +79,10 @@ const Side = () => {
 
             }
         </div>
-        <Grid style={{ marginTop: '35px' }} container direction='row' justify='center' alignItems='center'>
+        <Grid style={{ marginTop: '20px' }} container direction='row' justify='center' alignItems='center'>
             <img className='icon_spin' src={settings} style={{ width: '45px', height: '40px' }} />
         </Grid>
-        <span id='dummy_footer' style={{ borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', position: 'fixed', bottom: '10px', boxShadow: '5px 8px 10px #888', color: 'white', width: '100%', background: 'white', height: '50px' }} >dummy_text</span>
+        <span id='dummy_footer' style={{ borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', position: 'fixed', bottom: '10px', boxShadow: '5px 8px 10px #888', color: 'white', width: '100%', background: 'white', height: '20px' }} >dummy_text</span>
 
 
     </div>)

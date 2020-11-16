@@ -76,10 +76,10 @@
 }
 .border_item {
   border-radius: 10px;
+  text-align: center;
   border: 1px solid #dcdcdc;
   width: 33%;
   height: 80xp;
-  box-shadow: 5px 8px 10px #888;
 }
 .board_div {
   display: flex;
@@ -88,4 +88,8 @@
   align-content: center;
   width: 100%;
   height: 80px;
+}
+.board_img {
+  width: 75px;
+  height: 75px;
 }
