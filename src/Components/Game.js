@@ -80,35 +80,38 @@ const Game = () => {
     }, [who])
 
     useEffect(() => {
+        if (who != 'game_over') {
+            if (res_array.includes(1) && res_array.includes(2) && res_array.includes(3) || res_array.includes(4) && res_array.includes(5) && res_array.includes(6)
+                || res_array.includes(7) && res_array.includes(8) && res_array.includes(9) || res_array.includes(1) && res_array.includes(5) && res_array.includes(9)
+                || res_array.includes(7) && res_array.includes(5) && res_array.includes(3) || res_array.includes(1) && res_array.includes(4) && res_array.includes(7)
+                || res_array.includes(2) && res_array.includes(5) && res_array.includes(8) || res_array.includes(3) && res_array.includes(6) && res_array.includes(9)) {
+                no_of_times.current += 1;//one entire game iteration played
+                document.querySelector("div[id='main_action']").style.opacity = '0.3';
+                setwinner('human');
+                setwho('game_over');
+                setscoreHuman([...scoreHuman, '1']);
+                clearTimeout(AItimer.current);//clearing AI async timeout thread
+                setTimeout(() => {
+                    setwinner(''); setres_array([]); setai_array([]);
+                    document.querySelector("div[id='main_action']").style.opacity = '1';
+                }, 3000);
+            }
 
-        if (res_array.includes(1) && res_array.includes(2) && res_array.includes(3) || res_array.includes(4) && res_array.includes(5) && res_array.includes(6)
-            || res_array.includes(7) && res_array.includes(8) && res_array.includes(9) || res_array.includes(1) && res_array.includes(5) && res_array.includes(9)
-            || res_array.includes(7) && res_array.includes(5) && res_array.includes(3) || res_array.includes(1) && res_array.includes(4) && res_array.includes(7)
-            || res_array.includes(2) && res_array.includes(5) && res_array.includes(8) || res_array.includes(3) && res_array.includes(6) && res_array.includes(9)) {
-            no_of_times.current += 1;//one entire game iteration played
-            document.querySelector("div[id='main_action']").style.opacity = '0.3';
-            setwinner('human');
-            setwho('game_over');
-            setscoreHuman([...scoreHuman, '1']);
-            clearTimeout(AItimer.current);//clearing AI async timeout thread
-            setTimeout(() => {
-                setwinner(''); setres_array([]); setai_array([]);
-                document.querySelector("div[id='main_action']").style.opacity = '1';
-            }, 3000);
-        }
-        if (ai_array.includes(1) && ai_array.includes(2) && ai_array.includes(3) || ai_array.includes(4) && ai_array.includes(5) && ai_array.includes(6)
-            || ai_array.includes(7) && ai_array.includes(8) && ai_array.includes(9) || ai_array.includes(1) && ai_array.includes(5) && ai_array.includes(9)
-            || ai_array.includes(7) && ai_array.includes(5) && ai_array.includes(3) || ai_array.includes(1) && ai_array.includes(4) && ai_array.includes(7)
-            || ai_array.includes(2) && ai_array.includes(5) && ai_array.includes(8) || ai_array.includes(3) && ai_array.includes(6) && ai_array.includes(9)) {
-            no_of_times.current += 1;//one entire game iteration played
-            document.querySelector("div[id='main_action']").style.opacity = '0.3';
-            setwinner('computer');
-            setwho('game_over');
-            setscoreAI([...scoreAI, '1']);
-            setTimeout(() => {
-                setwinner(''); setres_array([]); setai_array([]);
-                document.querySelector("div[id='main_action']").style.opacity = '1';
-            }, 3000);
+            if (ai_array.includes(1) && ai_array.includes(2) && ai_array.includes(3) || ai_array.includes(4) && ai_array.includes(5) && ai_array.includes(6)
+                || ai_array.includes(7) && ai_array.includes(8) && ai_array.includes(9) || ai_array.includes(1) && ai_array.includes(5) && ai_array.includes(9)
+                || ai_array.includes(7) && ai_array.includes(5) && ai_array.includes(3) || ai_array.includes(1) && ai_array.includes(4) && ai_array.includes(7)
+                || ai_array.includes(2) && ai_array.includes(5) && ai_array.includes(8) || ai_array.includes(3) && ai_array.includes(6) && ai_array.includes(9)) {
+                no_of_times.current += 1;//one entire game iteration played
+                document.querySelector("div[id='main_action']").style.opacity = '0.3';
+                setwinner('computer');
+                setwho('game_over');
+                setscoreAI([...scoreAI, '1']);
+                setTimeout(() => {
+                    setwinner(''); setres_array([]); setai_array([]);
+                    document.querySelector("div[id='main_action']").style.opacity = '1';
+                }, 3000);
+            }
+
         }
 
     }, [res_array, ai_array]);
