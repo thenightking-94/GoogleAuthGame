@@ -1,5 +1,4 @@
 import React from 'react';
-import MetaTags from 'react-meta-tags';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Base from './Components/Base';
 import Side from './Components/Side';
@@ -14,10 +13,6 @@ const App = () => {
     else
         return (
             <div>
-                <MetaTags>
-                    <meta name="viewport" content="height=device-height,width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,
-                user-scalable=no,target-densitydpi=device-dpi"/>
-                </MetaTags>
                 <Router >
                     <div>
                         <Switch>
