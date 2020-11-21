@@ -47,9 +47,9 @@ const Game = () => {
                 if ((ai_array.length + res_array.length) != 9) {
                     while (true) {
                         var el = Math.floor(Math.random() * 9) + 1;
-
-                        //checking if its an unique number not present in the boxes before
-                        if (!res_array.includes(el) && !ai_array.includes(el))
+                        console.log(el)
+                        //checking if its an unique number not present in the boxes before and making computer place a close range number of last human entered box
+                        if (!res_array.includes(el) && !ai_array.includes(el) && (el > (res_array[res_array.length - 1] + 2) || el < (res_array[res_array.length - 1] + 3)))
                             break;
                     }
                     AI_parse = el;
