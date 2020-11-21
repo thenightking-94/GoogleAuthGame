@@ -87,4 +87,5 @@ const Side = () => {
 
     </div>)
 }
-export default Side;
+const MemoizedSide = React.memo(Side);
+export default MemoizedSide;

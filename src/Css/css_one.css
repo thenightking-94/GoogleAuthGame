@@ -94,6 +94,7 @@
   height: 75px;
 }
 .scoreboard {
+  box-shadow: 5px 8px 10px #888;
   padding: 10px;
   text-align: center;
   position: fixed;

@@ -20,11 +20,7 @@ const Game = () => {
     const AItimer = useRef();
     //state for the game flow
     const no_of_times = useRef(0);
-    const test = useRef(0);
-    useEffect(() => {
-        console.log(test.current++)
-        console.log(document.getElementById('stop_player'))
-    })
+
     useEffect(() => {
         var url = window.location.href;
         var str = (url.split('/'))[4];
@@ -45,14 +41,85 @@ const Game = () => {
                 var AI_parse = null;
                 //condition to check if all the boxes have been filled up by AI/player
                 if ((ai_array.length + res_array.length) != 9) {
-                    while (true) {
-                        var el = Math.floor(Math.random() * 9) + 1;
-                        console.log(el)
-                        //checking if its an unique number not present in the boxes before and making computer place a close range number of last human entered box
-                        if (!res_array.includes(el) && !ai_array.includes(el) && (el > (res_array[res_array.length - 1] + 2) || el < (res_array[res_array.length - 1] + 3)))
-                            break;
+                    var el = null;
+                    //difficulty level raiser (AI manipulation as per levels)
+
+                    if (no_of_times.current <= 2) {
+                        while (true) {
+                            el = Math.floor(Math.random() * 9) + 1;
+                            //checking if its an unique number not present in the boxes 
+                            if (!res_array.includes(el) && !ai_array.includes(el))
+                                break;
+                        }
                     }
-                    AI_parse = el;
+
+                    if (no_of_times.current > 2) {
+
+                        while (true) {
+
+                            //Computer trying to win
+                            //2,4,6 & 8
+                            if ((ai_array.includes(3) && ai_array.includes(1) && !res_array.includes(2)) || (ai_array.includes(5) && ai_array.includes(8) && !res_array.includes(2)))
+                                el = 2;
+                            else if ((ai_array.includes(7) && ai_array.includes(9) && !res_array.includes(8)) || (ai_array.includes(2) && ai_array.includes(5) && !res_array.includes(8)))
+                                el = 8;
+                            else if ((ai_array.includes(5) && ai_array.includes(6) && !res_array.includes(4)) || (ai_array.includes(1) && ai_array.includes(7) && !res_array.includes(4)))
+                                el = 4;
+                            else if ((ai_array.includes(4) && ai_array.includes(5) && !res_array.includes(6)) || (ai_array.includes(3) && ai_array.includes(9) && !res_array.includes(6)))
+                                el = 6;
+                            //1,3,9 & 7
+                            else if ((ai_array.includes(3) && ai_array.includes(2) && !res_array.includes(1)) || (ai_array.includes(4) && ai_array.includes(7) && !res_array.includes(1)) || (ai_array.includes(5) && ai_array.includes(9) && !res_array.includes(1)))
+                                el = 1;
+                            else if ((ai_array.includes(2) && ai_array.includes(1) && !res_array.includes(3)) || (ai_array.includes(5) && ai_array.includes(7) && !res_array.includes(3)) || (ai_array.includes(9) && ai_array.includes(6) && !res_array.includes(3)))
+                                el = 3;
+                            else if ((ai_array.includes(7) && ai_array.includes(8) && !res_array.includes(9)) || (ai_array.includes(5) && ai_array.includes(1) && !res_array.includes(9)) || (ai_array.includes(3) && ai_array.includes(6) && !res_array.includes(9)))
+                                el = 9;
+                            else if ((ai_array.includes(1) && ai_array.includes(4) && !res_array.includes(7)) || (ai_array.includes(8) && ai_array.includes(9) && !res_array.includes(7)) || (ai_array.includes(5) && ai_array.includes(3) && !res_array.includes(7)))
+                                el = 7;
+                            //5
+                            else if ((ai_array.includes(2) && ai_array.includes(8) && !res_array.includes(5)) || (ai_array.includes(4) && ai_array.includes(6) && !res_array.includes(5)) || (ai_array.includes(1) && ai_array.includes(9) && !res_array.includes(5)) || (ai_array.includes(3) && ai_array.includes(7) && !res_array.includes(5)))
+                                el = 5;
+
+                            //Computer will start grilling you now mercilessly
+                            //2,4,6 & 8
+                            else if ((res_array.includes(3) && res_array.includes(1) && !ai_array.includes(2)) || (res_array.includes(5) && res_array.includes(8) && !ai_array.includes(2)))
+                                el = 2;
+                            else if ((res_array.includes(7) && res_array.includes(9) && !ai_array.includes(8)) || (res_array.includes(2) && res_array.includes(5) && !ai_array.includes(8)))
+                                el = 8;
+                            else if ((res_array.includes(5) && res_array.includes(6) && !ai_array.includes(4)) || (res_array.includes(1) && res_array.includes(7) && !ai_array.includes(4)))
+                                el = 4;
+                            else if ((res_array.includes(4) && res_array.includes(5) && !ai_array.includes(6)) || (res_array.includes(3) && res_array.includes(9) && !ai_array.includes(6)))
+                                el = 6;
+
+                            //1,3,9 & 7
+                            else if ((res_array.includes(3) && res_array.includes(2) && !ai_array.includes(1)) || (res_array.includes(4) && res_array.includes(7) && !ai_array.includes(1)) || (res_array.includes(5) && res_array.includes(9) && !ai_array.includes(1)))
+                                el = 1;
+                            else if ((res_array.includes(2) && res_array.includes(1) && !ai_array.includes(3)) || (res_array.includes(5) && res_array.includes(7) && !ai_array.includes(3)) || (res_array.includes(9) && res_array.includes(6) && !ai_array.includes(3)))
+                                el = 3;
+                            else if ((res_array.includes(7) && res_array.includes(8) && !ai_array.includes(9)) || (res_array.includes(5) && res_array.includes(1) && !ai_array.includes(9)) || (res_array.includes(3) && res_array.includes(6) && !ai_array.includes(9)))
+                                el = 9;
+                            else if ((res_array.includes(1) && res_array.includes(4) && !ai_array.includes(7)) || (res_array.includes(8) && res_array.includes(9) && !ai_array.includes(7)) || (res_array.includes(5) && res_array.includes(3) && !ai_array.includes(7)))
+                                el = 7;
+
+                            //5
+                            else if ((res_array.includes(2) && res_array.includes(8) && !ai_array.includes(5)) || (res_array.includes(4) && res_array.includes(6) && !ai_array.includes(5)) || (res_array.includes(1) && res_array.includes(9) && !ai_array.includes(5)) || (res_array.includes(3) && res_array.includes(7) && !ai_array.includes(5)))
+                                el = 5;
+                            else {
+                                while (true) {
+                                    el = Math.floor(Math.random() * 9) + 1;
+                                    //checking if its an unique number not present in the boxes 
+                                    if (!res_array.includes(el) && !ai_array.includes(el))
+                                        break;
+                                }
+                            }
+
+                            if (el)
+                                break;
+                        }
+                    }
+
+
+                    AI_parse = Number(el);
                     var array = ai_array ? ai_array : [];
                     array = [...array, AI_parse];//concat new id values to array
                     setai_array(array);
@@ -220,7 +287,11 @@ const Game = () => {
                         </div>
                     </div>
                 </div>
-                <Grid style={{ marginTop: '35px' }} container direction='row' justify='center' alignItems='center'>
+                {
+                    no_of_times.current >= 0 &&
+                    <span style={{ fontWeight: '600', boxShadow: '5px 8px 10px #888', borderRadius: '6px', background: '#e88d14', color: 'black', padding: '3px', fontFamily: 'Helvetica', fontVariant: 'small-caps', marginLeft: '40%', fontSize: '17px' }}>level&nbsp;:&nbsp;{no_of_times.current + 1}</span>
+                }
+                <Grid style={{ marginTop: '25px' }} container direction='row' justify='center' alignItems='center'>
                     <img className='icon_spin' src={settings} style={{ width: '45px', height: '40px' }} />
                 </Grid>
                 <span id='dummy_footer' style={{ borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', position: 'fixed', bottom: '10px', boxShadow: '5px 8px 10px #888', color: 'white', width: '100%', background: 'white', height: '50px' }} >dummy_text</span>
