@@ -25,7 +25,9 @@ export default function Base() {
                     window.location.assign('/Side');
                 }} style={{ boxShadow: '5px 8px 10px #888', cursor: 'pointer', background: '#ad1b02', textAlign: 'center', width: '20%', padding: '10px', borderRadius: '25px', color: 'white', fontFamily: 'Helvetica' }}>Play</Typography>
                 <Divider style={{ background: 'white', height: '50px' }} />
-                <img className='icon_spin' src={settings} style={{ width: '45px', height: '40px' }} />
+                <img onClick={() => {
+                    window.location.assign('/exit');
+                }} className='icon_spin' src={settings} style={{ cursor: 'pointer', width: '45px', height: '40px' }} />
                 <span id='dummy_footer' style={{ borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', position: 'fixed', bottom: '10px', boxShadow: '5px 8px 10px #888', color: 'white', width: '100%', background: 'white', height: '50px' }} >dummy_text</span>
             </Grid>
         </div>

@@ -30,9 +30,21 @@ const Side = () => {
         }
     }, [val])
 
+    const getFirstName = (str) => {
+        str = str + " ";
+        var res = '';
+        for (var i = 0; i < str.length; i++) {
+            if (str[i] != ' ')
+                res += str[i];
+            if (str[i] == ' ')
+                break;
+        }
+        return res;
+
+    }
     return (<div>
         <div style={{ width: '100%', backgroundColor: 'white' }}>
-            <Typography className='choose_your_side' style={{ fontFamily: 'Helvetica', fontSize: '20px', color: 'white', backgroundImage: 'linear-gradient(to right,#ad1b02,#e88d14)' }}>Hey ! Choose your side </Typography>
+            <Typography className='choose_your_side' style={{ fontFamily: 'Helvetica', fontSize: '18px', color: 'white', backgroundImage: 'linear-gradient(to right,#ad1b02,#e88d14)' }}>Hey&nbsp;{getFirstName(localStorage.getItem('name'))}&nbsp;! Choose your side </Typography>
         </div>
         <Divider style={{ background: 'white', height: '90px' }} />
         <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignContent: 'center' }}>
@@ -80,7 +92,9 @@ const Side = () => {
             }
         </div>
         <Grid style={{ marginTop: '20px' }} container direction='row' justify='center' alignItems='center'>
-            <img className='icon_spin' src={settings} style={{ width: '45px', height: '40px' }} />
+            <img onClick={() => {
+                window.location.assign('/exit');
+            }} className='icon_spin' src={settings} style={{ cursor: 'pointer', width: '45px', height: '40px' }} />
         </Grid>
         <span id='dummy_footer' style={{ borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', position: 'fixed', bottom: '10px', boxShadow: '5px 8px 10px #888', color: 'white', width: '100%', background: 'white', height: '20px' }} >dummy_text</span>
 

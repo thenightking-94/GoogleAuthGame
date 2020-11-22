@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Base from './Components/Base';
 import Side from './Components/Side';
 import Game from './Components/Game';
+import Login from './Components/Login';
+import Logout from './Components/Logout';
 
 const App = () => {
 
@@ -13,10 +15,13 @@ const App = () => {
     else
         return (
             <div>
+
                 <Router >
                     <div>
                         <Switch>
-                            <Route exact path='/' component={Base} />
+                            <Route exact path='/' component={Login} />
+                            <Route exact path='/exit' component={Logout} />
+                            <Route exact path='/base' component={Base} />
                             <Route exact path='/Side' component={Side} />
                             <Route exact path='/player/:side' component={Game} />
                         </Switch>

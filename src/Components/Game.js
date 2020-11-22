@@ -292,7 +292,9 @@ const Game = () => {
                     <span style={{ fontWeight: '600', boxShadow: '5px 8px 10px #888', borderRadius: '6px', background: '#e88d14', color: 'black', padding: '3px', fontFamily: 'Helvetica', fontVariant: 'small-caps', marginLeft: '40%', fontSize: '17px' }}>level&nbsp;:&nbsp;{no_of_times.current + 1}</span>
                 }
                 <Grid style={{ marginTop: '25px' }} container direction='row' justify='center' alignItems='center'>
-                    <img className='icon_spin' src={settings} style={{ width: '45px', height: '40px' }} />
+                    <img onClick={() => {
+                        window.location.assign('/exit');
+                    }} className='icon_spin' src={settings} style={{ cursor: 'pointer', width: '45px', height: '40px' }} />
                 </Grid>
                 <span id='dummy_footer' style={{ borderBottomLeftRadius: '25px', borderBottomRightRadius: '25px', position: 'fixed', bottom: '10px', boxShadow: '5px 8px 10px #888', color: 'white', width: '100%', background: 'white', height: '50px' }} >dummy_text</span>
             </div>
