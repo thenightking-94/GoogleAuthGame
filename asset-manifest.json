@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a6043631.chunk.css",
+    "main.js": "/static/js/main.fc5a5e0d.chunk.js",
+    "main.js.map": "/static/js/main.fc5a5e0d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5cb2b3d7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5cb2b3d7.js.map",
+    "static/js/2.77eea65c.chunk.js": "/static/js/2.77eea65c.chunk.js",
+    "static/js/2.77eea65c.chunk.js.map": "/static/js/2.77eea65c.chunk.js.map",
+    "static/js/3.327d1069.chunk.js": "/static/js/3.327d1069.chunk.js",
+    "static/js/3.327d1069.chunk.js.map": "/static/js/3.327d1069.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.a6043631.chunk.css.map": "/static/css/main.a6043631.chunk.css.map",
+    "static/js/2.77eea65c.chunk.js.LICENSE.txt": "/static/js/2.77eea65c.chunk.js.LICENSE.txt",
+    "static/media/circle.248af927.jpg": "/static/media/circle.248af927.jpg",
+    "static/media/cross.94060cda.jpg": "/static/media/cross.94060cda.jpg",
+    "static/media/settings_icon.1636f381.png": "/static/media/settings_icon.1636f381.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5cb2b3d7.js",
+    "static/js/2.77eea65c.chunk.js",
+    "static/css/main.a6043631.chunk.css",
+    "static/js/main.fc5a5e0d.chunk.js"
+  ]
+}
