@@ -12,17 +12,16 @@ function Logout() {
     };
 
     return (
-        <div style={{ textAlign: 'center', paddingTop: '55%' }}>
+        <div className='landing_page' style={{ textAlign: 'center', paddingTop: '70%' }}>
 
-            <Typography style={{ boxShadow: '5px 8px 10px #888', borderRadius: '5px', color: 'white', fontFamily: 'Helvetica', fontVariant: 'all-small-caps', fontSize: '23px', fontWeight: '600', background: 'black', }}>Sure, Wanna Exit 😐?</Typography>
-            <Divider style={{ background: 'white', height: '70px' }} />
-            <div style={{ border: '1px solid #e88d14', background: '#ad1b02' }}>
-                <GoogleLogout
-                    clientId={process.env.REACT_APP_API_KEY}
-                    buttonText="Logout"
-                    onLogoutSuccess={onSuccess}
-                ></GoogleLogout>
-            </div>
+            <Typography style={{ boxShadow: '5px 8px 10px #888', borderRadius: '5px', color: 'white', fontFamily: 'Helvetica', fontVariant: 'all-small-caps', fontSize: '23px', fontWeight: '400' }}>Sure, Wanna Exit 😐?</Typography>
+            <Divider id='classic_filler_top' />
+            <GoogleLogout
+                clientId={process.env.REACT_APP_API_KEY}
+                buttonText="Logout"
+                onLogoutSuccess={onSuccess}
+            />
+            <Divider id='classic_filler' />
         </div>
     );
 }

@@ -18,20 +18,20 @@ function Login() {
     };
 
     return (
-        <div style={{ textAlign: 'center', paddingTop: '60%' }}>
+        <div className='landing_page' style={{ textAlign: 'center', paddingTop: '70%' }}>
 
-            <Typography style={{ boxShadow: '5px 8px 10px #888', borderRadius: '5px', color: 'white', fontFamily: 'Helvetica', fontVariant: 'all-small-caps', fontSize: '23px', fontWeight: '400', background: 'black', }}>React-TicTacToe-game</Typography>
-            <Divider style={{ background: 'white', height: '70px' }} />
-            <div style={{ border: '1px solid #e88d14', background: '#ad1b02' }}>
-                <GoogleLogin
-                    clientId={process.env.REACT_APP_API_KEY}
-                    buttonText='Sign in with Google'
-                    onSuccess={onSuccess}
-                    onFailure={onFailure}
-                    cookiePolicy={'single_host_origin'}
-                    isSignedIn={true}
-                />
-            </div>
+            <Typography style={{ boxShadow: '5px 8px 10px #888', borderRadius: '5px', color: 'white', fontFamily: 'ITC Charter', fontVariant: 'all-small-caps', fontSize: '23px', fontWeight: '400' }}>React-TicTacToe-game</Typography>
+            <Divider id='classic_filler_top' />
+
+            <GoogleLogin
+                clientId={process.env.REACT_APP_API_KEY}
+                buttonText='Sign in with Google'
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+                isSignedIn={true}
+            />
+            <Divider id='classic_filler' />
 
         </div>
     );

@@ -44,7 +44,7 @@ const Game = () => {
                     var el = null;
                     //difficulty level raiser (AI manipulation as per levels)
 
-                    if (no_of_times.current <= 2) {
+                    if (no_of_times.current <= 1) {
                         while (true) {
                             el = Math.floor(Math.random() * 9) + 1;
                             //checking if its an unique number not present in the boxes 
@@ -53,7 +53,7 @@ const Game = () => {
                         }
                     }
 
-                    if (no_of_times.current > 2) {
+                    if (no_of_times.current > 1) {
 
                         while (true) {
 

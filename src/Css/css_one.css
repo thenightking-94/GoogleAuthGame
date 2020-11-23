@@ -215,3 +215,14 @@
     animation-timing-function: ease-out;
   }
 }
+.landing_page {
+  background-image: linear-gradient(to left, black, #ad1b02);
+}
+#classic_filler {
+  background-image: linear-gradient(to left, black, #ad1b02);
+  height:500px;
+}
+#classic_filler_top {
+  background-image: linear-gradient(to left, black, #ad1b02);
+  height: 40px;
+}

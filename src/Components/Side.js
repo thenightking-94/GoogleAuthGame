@@ -5,6 +5,7 @@ import cross from '../assets/cross.jpg';
 import circle from '../assets/circle.jpg';
 import settings from '../assets/settings_icon.png';
 
+
 const pick_side = {
     marginTop: '40px',
     display: 'flex',
@@ -101,5 +102,4 @@ const Side = () => {
 
     </div>)
 }
-const MemoizedSide = React.memo(Side);
-export default MemoizedSide;
+export default (Side);
